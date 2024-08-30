@@ -26,10 +26,6 @@ Ce projet est un site web pour l'entreprise Boumitec, qui comprend les sections 
 3. Configurez les variables d'environnement.
 4. Lancez le serveur avec `node server.js`.
 
-## Sécurité
-
-**Important** : Ne partagez pas vos informations sensibles (comme votre email et mot de passe d'application) sur GitHub. Utilisez des variables d'environnement pour sécuriser ces informations.
-
 ## License
 
 Ce projet est sous licence MIT.
