@@ -11,8 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "ibtissamfouldi10@gmail.com", // Remplacez par votre adresse Gmail
-    pass: "kfdw jwyi ahxd pfgs", // Remplacez par votre mot de passe d'application
+    user: process.env.EMAIL_USER, // Remplacez par votre adresse Gmail (utilisez une variable d'environnement)
+    pass: process.env.EMAIL_PASS, // Remplacez par votre mot de passe d'application (utilisez une variable d'environnement)
   },
 });
 
@@ -22,7 +22,7 @@ app.post("/rdv", (req, res) => {
 
   // Contenu de l'email de confirmation au client
   const mailOptionsClient = {
-    from: "ibtissamfouldi10@gmail.com",
+    from: process.env.EMAIL_USER,
     to: email,
     subject: "Confirmation de Rendez-vous",
     html: `
@@ -35,8 +35,8 @@ app.post("/rdv", (req, res) => {
 
   // Contenu de l'email à l'entreprise
   const mailOptionsEntreprise = {
-    from: "ibtissamfouldi10@gmail.com",
-    to: "ibtissamfouldi84@gmail.com", // Remplacez par l'email de l'entreprise
+    from: process.env.EMAIL_USER,
+    to: process.env.ENTREPRISE_EMAIL, // Remplacez par l'email de l'entreprise (utilisez une variable d'environnement)
     subject: "Nouveau Rendez-vous",
     html: `
       <h2>Boumitec</h2>
